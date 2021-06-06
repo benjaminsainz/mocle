@@ -1,2 +1,2 @@
-# mocle
+# MOCLE
 Multi-objective Clustering Ensemble
