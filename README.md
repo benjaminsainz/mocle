@@ -36,13 +36,13 @@ A test.py file is provided for a more straight-forward approach to using the alg
 
 I hope this implementation to this great method is useful for your clustering tasks,
 
-Benjamin
+Benjamin  
 **LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/
 
 # References
-[1] K. Faceli, A. C. De Carvalho, and M. C. De Souto, “Multi-objective clustering ensemble,” International Journal of Hybrid Intelligent Systems, vol. 4, no. 3, pp. 145–156, 2007.
-[2] K. Faceli, M. C. de Souto, D. S. de Araujo, and A. C. de Carvalho, “Multi-objective clustering ensemble for gene expression data analysis,” Neurocomputing, vol. 72, no. 13-15, pp. 2763–2774, 2009.
-[3] H. A. Khan, “Nsga-ii,” https://github.com/haris989/NSGA-II, 2017.
-[4] F.Pedregosa,G.Varoquaux,A.Gramfort,V.Michel,B.Thirion,O.Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Pas- sos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay, “Scikit- learn: Machine learning in Python,” Journal of Machine Learning Re- search, vol. 12, pp. 2825–2830, 2011.
-[5] A. Espin, “Snn-clustering,” https://github.com/albert-espin/snn-clustering, 2019.
+[1] K. Faceli, A. C. De Carvalho, and M. C. De Souto, “Multi-objective clustering ensemble,” International Journal of Hybrid Intelligent Systems, vol. 4, no. 3, pp. 145–156, 2007.  
+[2] K. Faceli, M. C. de Souto, D. S. de Araujo, and A. C. de Carvalho, “Multi-objective clustering ensemble for gene expression data analysis,” Neurocomputing, vol. 72, no. 13-15, pp. 2763–2774, 2009.  
+[3] H. A. Khan, “Nsga-ii,” https://github.com/haris989/NSGA-II, 2017.  
+[4] F.Pedregosa,G.Varoquaux,A.Gramfort,V.Michel,B.Thirion,O.Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Pas- sos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay, “Scikit- learn: Machine learning in Python,” Journal of Machine Learning Re- search, vol. 12, pp. 2825–2830, 2011.  
+[5] A. Espin, “Snn-clustering,” https://github.com/albert-espin/snn-clustering, 2019.  
 [6] A. Kultzak, “Mcla,” https://github.com/kultzak/MCLA, 2019.
