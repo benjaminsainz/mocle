@@ -13,7 +13,7 @@ MOCLE is available in this repository in a Python implementation.
 ``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.  
 ``max_gens`` (default = 50): maximum generations in the evolutionary process.   
 ``k_range`` (default = True): boolean to generate clusters in the range *k* to *2k* or perform clustering exclusively with the n_clusters hyper-parameter provided.  
-``representation`` (default = 'label'): we include a label-based representation and is the only available option in this implementation.
+``representation`` (default = 'label'): we include a label-based representation and is the only available option in this implementation.  
 ``pareto_plot`` (default = False): display the pareto plot with color-coded fronts along the evolutionary process.
 
 ### Optional data retrieval function
