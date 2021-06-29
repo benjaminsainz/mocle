@@ -1,7 +1,8 @@
 """
-Created on Fri Mar 19 14:09:49 2021
-
-@author: benjamin
+Authors: Katti Faceli, Marcilio C.P. de Suoto, Daniel S.A. de Araújo, and André C.P.L.F. de Carvalho.
+Code: Benjamin Mario Sainz-Tinajero
+Year: 2021.
+https://github.com/benjaminsainz/mocle
 """
 
 from retr import *
