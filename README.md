@@ -37,7 +37,7 @@ A test.py file is provided for a more straight-forward approach to using the alg
 I hope this implementation to this great method is useful for your clustering tasks,
 
 Benjamin  
-**LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/
+**LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/  
 **Email:** a01362640@itesm.mx, bm.sainz@gmail.com
 
 # References
