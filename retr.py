@@ -1,6 +1,7 @@
 """
-@authors: Benjamin Mario Sainz-Tinajero, Andres Eduardo Gutierrez-Rodriguez,
-Héctor Gibrán Ceballos-Cancino, Francisco Javier Cantu-Ortiz
+Author: Benjamin Mario Sainz-Tinajero
+Year: 2021.
+https://github.com/benjaminsainz/mocle
 """
 
 from sklearn import datasets
