@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Fri Mar 19 10:58:28 2021
-
-@author: benjamin
+Authors: Katti Faceli, Marcilio C.P. de Suoto, Daniel S.A. de Araújo, and André C.P.L.F. de Carvalho.
+Code: Benjamin Mario Sainz-Tinajero
+Year: 2021.
+https://github.com/benjaminsainz/mocle
 """
 
 from mcla import *
