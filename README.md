@@ -38,6 +38,7 @@ I hope this implementation to this great method is useful for your clustering ta
 
 Benjamin  
 **LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/
+**Email:** a01362640@itesm.mx, bm.sainz@gmail.com
 
 # References
 [1] K. Faceli, A. C. De Carvalho, and M. C. De Souto, “Multi-objective clustering ensemble,” International Journal of Hybrid Intelligent Systems, vol. 4, no. 3, pp. 145–156, 2007.  
