@@ -1,108 +1,37 @@
 """
-Author: Benjamin Mario Sainz-Tinajero
-Year: 2021.
-https://github.com/benjaminsainz/mocle
+Author: Benjamin M. Sainz-Tinajero @ Tecnologico de Monterrey, 2022.
 """
 
-from sklearn import datasets
-import csv
-import numpy as np
+
 import pandas as pd
+import numpy as np
+import os
 
 
-def retrieval(data):
-    if data == 'aggregation':
-        n_clusters = 7
-        X = np.array(list(csv.reader(open('data/aggregation_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/aggregation_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'breast-cancer-wisconsin':
-        n_clusters = 2
-        X, y = datasets.load_breast_cancer().data, datasets.load_breast_cancer().target
-    elif data == 'breast-tissue':
-        n_clusters = 6
-        X = np.array(list(csv.reader(open('data/breast-tissue_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/breast-tissue_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'dermatology':
-        n_clusters = 6
-        X = np.array(list(csv.reader(open('data/dermatology_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/dermatology_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'ecoli':
-        n_clusters = 8
-        X = np.array(list(csv.reader(open('data/ecoli_X.csv', newline=''))))
-        y = list(csv.reader(open('data/ecoli_y.csv', newline='')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'forest':
-        n_clusters = 4
-        X = np.array(list(csv.reader(open('data/forest_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/forest_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'glass':
-        n_clusters = 6
-        X = np.array(list(csv.reader(open('data/glass_X.csv', newline=''))))
-        y = list(csv.reader(open('data/glass_y.csv', newline='')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'iris':
-        n_clusters = 3
-        X, y = datasets.load_iris().data, datasets.load_iris().target
-    elif data == 'jain':
-        n_clusters = 2
-        X = np.array(list(csv.reader(open('data/jain_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/jain_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'leaf':
-        n_clusters = 36
-        X = np.array(list(csv.reader(open('data/leaf_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/leaf_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'liver':
-        n_clusters = 16
-        X = np.array(list(csv.reader(open('data/liver_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/liver_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'parkinsons':
-        n_clusters = 2
-        X = np.array(list(csv.reader(open('data/parkinsons_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/parkinsons_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'pathbased':
-        n_clusters = 3
-        X = np.array(list(csv.reader(open('data/pathbased_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/pathbased_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'r15':
-        n_clusters = 15
-        X = np.array(list(csv.reader(open('data/r15_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/r15_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'seeds':
-        n_clusters = 3
-        X = np.array(list(csv.reader(open('data/seeds_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/seeds_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'segment':
-        n_clusters = 7
-        X = np.array(list(csv.reader(open('data/segment_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/segment_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'spiral':
-        n_clusters = 3
-        X = np.array(list(csv.reader(open('data/spiral_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/spiral_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'transfusion':
-        n_clusters = 2
-        X = np.array(list(csv.reader(open('data/transfusion_X.csv', newline=''))))
-        y = list(csv.reader(open('data/transfusion_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
-    elif data == 'wine':
-        n_clusters = 3
-        X, y = datasets.load_wine().data, datasets.load_wine().target
-    elif data == 'zoo':
-        n_clusters = 7
-        X = np.array(list(csv.reader(open('data/zoo_X.csv', newline='', encoding='utf-8-sig'))))
-        y = list(csv.reader(open('data/zoo_y.csv', newline='', encoding='utf-8-sig')))
-        X, y = X.astype(float), np.array([item for sublist in y for item in sublist])
+from sklearn.preprocessing import StandardScaler
+
+
+def original_data_numerical_dropna(data):
+    temp_df = pd.read_csv('data/{}_X.csv'.format(data), header=None)
+    for column in temp_df.select_dtypes(include=['object']):
+        temp_df[column], _ = pd.factorize(temp_df[column])
+    if os.path.isfile('data/{}_y.csv'.format(data)):
+        y_df = pd.read_csv('data/{}_y.csv'.format(data), header=None)
+        temp_df['y'] = y_df[0].to_list()
+        temp_df['y'] = temp_df['y'].astype(str)
+    else:
+        temp_df['y'] = ['1']*len(temp_df)
+    return temp_df
+
+
+def retrieval(data, n_clusters):
+    unsorted_df = original_data_numerical_dropna(data)
+    if n_clusters == 'auto':
+        n_clusters = len(set(unsorted_df.loc[:,'y'].to_list()))
+    X = StandardScaler().fit_transform(unsorted_df.iloc[:,:-1])
+    X = np.array(X).astype(float)
+    if os.path.isfile('data/{}_y.csv'.format(data)):
+        y = unsorted_df.loc[:,'y'].to_list()
+    else:
+        y = None
     return data, n_clusters, X, y
