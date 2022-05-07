@@ -55,11 +55,11 @@ import ctypes
 import os, sys, operator as op
 
 np.seterr(invalid = 'ignore')
-warnings.filterwarnings('ignore', category = DeprecationWarning)
+warnings.filterwarnings('ignore')
 
 IDXTYPEWIDTH  = os.getenv('METIS_IDXTYPEWIDTH', '32')
 
-print(IDXTYPEWIDTH)
+# print(IDXTYPEWIDTH)
 
 if IDXTYPEWIDTH == '32':
     idx_t = ctypes.c_int32
