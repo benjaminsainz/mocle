@@ -1,9 +1,8 @@
 """
-Authors: Katti Faceli, Marcilio C.P. de Suoto, Daniel S.A. de Araújo, and André C.P.L.F. de Carvalho.
-Code: Benjamin Mario Sainz-Tinajero
-Year: 2021.
-https://github.com/benjaminsainz/mocle
+Author: Benjamin M. Sainz-Tinajero @ Tecnologico de Monterrey, 2022.
+
 """
+
 
 import numpy as np
 
@@ -15,12 +14,12 @@ def cents(X, ind):
         for j in range(len(ind)):
             if ind[j] == i:
                 centroids['cluster_{}'.format(i)].append(X[j])
-        centroids['cluster_{}'.format(i)] = np.sum(centroids['cluster_{}'.format(i)],
-                                                   axis=0)/len(centroids['cluster_{}'.format(i)])
+        centroids['cluster_{}'.format(i)] = np.sum(centroids['cluster_{}'.format(i)], axis=0)/len(centroids['cluster_{}'.format(i)])
     return centroids
 
 
-def dev(X, ind):
+def dev(arguments):
+    X, ind, _ = arguments
     centroids = cents(X, ind)
     distances = []
     for i in range(len(ind)):
@@ -34,8 +33,9 @@ def takesecond(elem):
     return elem[1]
 
 
-def conn(X, ind, nnp=0.05):
-    connectivity = 0
+def pre_nn_computing(X):
+    nnp=0.05
+    nn_dict = dict()
     k = int(len(X) * nnp)
     for i in range(len(X)):
         distances = []
@@ -43,12 +43,20 @@ def conn(X, ind, nnp=0.05):
             if i != j:
                 distances.append((j, np.linalg.norm(X[i] - X[j])))
         distances.sort(key=takesecond, reverse=False)
-        nn = distances[:k]
+        nn_dict[i] = distances[:k]
+    return nn_dict
+
+
+def conn(arguments):
+    X, ind, nn_dict = arguments
+    connectivity = 0
+    for i in range(len(X)):
         nn_index = []
-        for n in nn:
+        for n in nn_dict[i]:
             nn_index.append(n[0])
         nn_index = enumerate(nn_index, start=1)
         for n in nn_index:
             if ind[i] != ind[n[1]]:
                 connectivity += 1 / n[0]
     return -connectivity
+
