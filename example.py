@@ -3,8 +3,6 @@ Author: Benjamin M. Sainz-Tinajero @ Tecnologico de Monterrey, 2022.
 
 """
 
-
-from retr import *
 from gen import *
 
 
