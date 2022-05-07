@@ -23,7 +23,7 @@ Open your preferred Python interface and follow these commands to generate a clu
 ``>>> from gen import *``  
 ``>>> run_mocle(data='iris', n_clusters=3, runs=10, max_gens=50)``
 
-Running these commands will execute ECAC-S using the ``iris`` dataset's features with 3 clusters, 50 generations, and 10 independent runs, and will compute the Adjusted RAND Index between the solutions and the reference labels in the ``iris_y.csv`` file. A ``.csv`` file with the clustering and the results is stored in the ``/mocle-out`` path.
+Running these commands will execute MOCLE using the ``iris`` dataset's features with 3 clusters, 50 generations, and 10 independent runs, and will compute the Adjusted RAND Index between the solutions and the reference labels in the ``iris_y.csv`` file. A ``.csv`` file with the clustering and the results is stored in the ``/mocle-out`` path.
 
 An ``example.py`` file is provided with this example for a more straight-forward approach to using the algorithm.  
 
