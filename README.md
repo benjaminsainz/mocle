@@ -1,44 +1,39 @@
-# MOCLE
-Multi-objective Clustering Ensemble
+# MOCLE (Multi-objective Clustering Ensemble)
+
+**Coded by:** Benjamin M. Sainz-Tinajero.  
 
 Source code of **MOCLE** [1],[2], a state-of-the-art Pareto-based evolutionary clustering algorithm by Katti Faceli, Marcilio C.P. de Souto, Daniel S.A. de Araújo, and André C.P.L.F. de Carvalho. The algorithm is based upon the search strategy of NSGA-II, and for this implementation we used the source code available in [3]. MOCLE starts by creating an initial population with conceptually diverse clustering algorithms using varying hyper-parameters and cluster numbers in the range of *k* to *2k*. The initial population is constituted using k-means, Single and Average link Agglomerative Clustering from the Scikit-learn library [4], and Shared Nearest Neighbors clustering method with diverse parameters [5]. The crossover operator for recombination selected randomly the number of clusters of the resulting child from the cluster interval of the parents and is performed by Strehl and Ghosh’s Meta-clustering Algorithm using Kultzak’s version [6], avoiding clones. MOCLE returns a set of solutions representing each region of the Pareto front obtained from the optimization of two complementary objective functions to be minimized: deviation and connectivity.
 
-MOCLE is available in this repository in a Python implementation.
+MOCLE is available in this repository in a parallelized Python implementation.
 
-# Algorithm hyper-parameters
-``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
-``n_clusters``: int with the number of desired clusters.  
+# Data Preparation
+This implementation requires one mandatory file to perform clustering. A ``.csv`` file named ``iris_X.csv``, for instance, must contain the features of a dataset with no header, one column per attribute and one row per object. A second optional file could contain ground truth labels in case you're running a benchmark and need to compute the Adjusted RAND Index of a solution against a reference mask or partition. This second file must be named ``iris_y.csv`` (for this example) and must have one column with the same number of objects as the ``iris_X.csv`` file (no header), placing each object into one group. Our algorithm automatically searches for both of this files in the ``\data`` path and computes the Adjusted RAND Index only if it finds ground truth labels in a file as mentioned before. We include 40 publicly available datasets complying with our implementation's required data format. 
+
+# Hyper-parameter Setting
+``data``: a string with the name of the dataset to be retrieved without the ``_X.csv`` or ``_y.csv`` suffixes.   
+``n_clusters``: integer with the number of required clusters. As an alternative, setting this argument as ``'auto'`` will set the number of clusters found in the ground truth file as ``n_clusters`` (this feature only works if there is a ``_y.csv`` ground truth file in the ``\data`` directory).  
 ``runs`` (default = 10): independent runs of the algorithm.  
-``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
-``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.  
-``max_gens`` (default = 50): maximum generations in the evolutionary process.   
-``k_range`` (default = True): boolean to generate clusters in the range *k* to *2k* or perform clustering exclusively with the n_clusters hyper-parameter provided.  
-``representation`` (default = 'label'): we include a label-based representation and is the only available option in this implementation.  
-``pareto_plot`` (default = False): display the pareto plot with color-coded fronts along the evolutionary process.
+``max_gens`` (default = 50): maximum generations of the evolutionary process.    
 
-### Optional data retrieval function
-An additional data retrieval function is included for easy access and generation of the parameters X, clusters and data along with multiple datasets ready to be clustered, which can be used as a reference for preparing your data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features, and the dataset's number of reference classes (n_clusters). The only parameter for this function is a string with a dataset name from the options. To run it on Python and get the information of the *wine* dataset, run these commands in the interface.     
-``>>> from retr import *``  
-``>>> data, n_clusters, X, y = data_retrieval('wine')``  
+For more information on the hyper-parameters and their influence in the evolutionary process, we refer the user to the article in Ref.[1].  
 
-Label files are included for every dataset for any desired benchmarking tests.
-
-# Setup and run using Python
-Open your preferred Python interface and follow these commands to cluster a dataset using MOCLE. To execute it, just import the functions in *gen.py* and run ``run_mocle()`` with all of its hyper-parameters. See the example code below, which follows the data, n_clusters, X, and y variables set previously for the *wine* dataset.  
-**Important**: You will need to have previously installed some basic data science packages such as numpy, pandas, matplotlib, seaborn, and Sci-kit Learn).
+# Setup and Run using Python
+Open your preferred Python interface and follow these commands to generate a clustering using MOCLE. We will continue using the ``iris`` dataset as an example.  
 
 ``>>> from gen import *``  
-``>>> run_mocle(X, n_clusters, runs=10, data=data, y=y, max_gens=50, k_range=True, representation='label', pareto_plot=False)``  
+``>>> run_mocle(data='iris', n_clusters=3, runs=10, max_gens=50)``
 
-Running these commands will execute MOCLE using the wine dataset's features, 3 clusters, with 50 generation for 10 independent runs, and will compute the adjusted RAND index between the solutions and the provided y array. A .csv file with the clustering and the results is stored in the ``/mocle-out`` path.
+Running these commands will execute ECAC-S using the ``iris`` dataset's features with 3 clusters, 50 generations, and 10 independent runs, and will compute the Adjusted RAND Index between the solutions and the reference labels in the ``iris_y.csv`` file. A ``.csv`` file with the clustering and the results is stored in the ``/mocle-out`` path.
 
-A test.py file is provided for a more straight-forward approach to using the algorithm.  
+An ``example.py`` file is provided with this example for a more straight-forward approach to using the algorithm.  
 
-I hope this implementation to this great method is useful for your clustering tasks,
+**Important**: You will need to have previously installed some basic data science packages such as NumPy, Pandas, Metis, Tables, and Scikit-learn.
+
+I hope our implementation to this great method is useful for your clustering tasks,
 
 Benjamin  
 **LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/  
-**Email:** a01362640@itesm.mx, bm.sainz@gmail.com
+**Email:** sainz@tec.mx, bm.sainz@gmail.com
 
 # References
 [1] K. Faceli, A. C. De Carvalho, and M. C. De Souto, “Multi-objective clustering ensemble,” International Journal of Hybrid Intelligent Systems, vol. 4, no. 3, pp. 145–156, 2007.  
