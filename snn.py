@@ -6,7 +6,6 @@ from sklearn.neighbors import kneighbors_graph
 
 def snn(X, neighbor_num, min_shared_neighbor_num):
     """Perform Shared Nearest Neighbor (SNN) clustering algorithm clustering.
-
     Parameters
     ----------
     X : array or sparse (CSR) matrix of shape (n_samples, n_features), or array of shape (n_samples, n_samples)
@@ -44,15 +43,12 @@ def get_snn_distance(x0, x1):
 
 class SNN(BaseEstimator, ClusterMixin):
     """Class for performing the Shared Nearest Neighbor (SNN) clustering algorithm.
-
     Parameters
     ----------
     neighbor_num : int
         K number of neighbors to consider for shared nearest neighbor similarity
-
     min_shared_neighbor_proportion : float [0, 1]
         Proportion of the K nearest neighbors that need to share two data points to be considered part of the same cluster
-
     Note: Naming conventions for attributes are based on the analogous ones of DBSCAN
     """
 
@@ -66,7 +62,6 @@ class SNN(BaseEstimator, ClusterMixin):
     def fit(self, X):
 
         """Perform SNN clustering from features or distance matrix.
-
         Parameters
         ----------
         X : array or sparse (CSR) matrix of shape (n_samples, n_features), or array of shape (n_samples, n_samples)
@@ -85,7 +80,6 @@ class SNN(BaseEstimator, ClusterMixin):
 
     def fit_predict(self, X, y=None, sample_weight=None):
         """Performs clustering on X and returns cluster labels.
-
         Parameters
         ----------
         X : array or sparse (CSR) matrix of shape (n_samples, n_features), or \
@@ -97,9 +91,7 @@ class SNN(BaseEstimator, ClusterMixin):
             ``min_samples`` is by itself a core sample; a sample with negative
             weight may inhibit its eps-neighbor from being core.
             Note that weights are absolute, and default to 1.
-
         y : Ignored
-
         Returns
         -------
         y : ndarray, shape (n_samples,)
